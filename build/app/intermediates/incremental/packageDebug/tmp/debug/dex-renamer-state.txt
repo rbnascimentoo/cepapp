@@ -1,0 +1,4 @@
+#Tue Mar 30 20:01:32 BRT 2021
+base.0=/home/rafael/AndroidStudioProjects/cepapp/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

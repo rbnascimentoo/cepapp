@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+br/com/rnascimento/cepapp/BuildConfig.java
+ br.com.rnascimento.cepapp.BuildConfig
