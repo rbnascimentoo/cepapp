@@ -33,14 +33,16 @@ class CepWidget extends StatelessWidget {
                 // iconSize: ,
                 tooltip: 'Pesquisar',
                 onPressed: () {
-                  context.showLoaderOverlay(
-                    widget: Text(
-                      "Loading...",
-                      style: TextStyle(color: Colors.blueAccent),
-                    ),
-                  );
+
                   if(_cepMaskController.text != null) {
+                    context.showLoaderOverlay(
+                      widget: Text(
+                        "Loading...",
+                        style: TextStyle(color: Colors.blueAccent),
+                      ),
+                    );
                     var r = _cepBloc.getCEP(_cepMaskController.text.toString());
+                    context.hideLoaderOverlay();
                   }
 
                 }),
@@ -57,6 +59,7 @@ class CepWidget extends StatelessWidget {
           builder: (context, snapshot) {
 
             if (snapshot.hasError) {
+              context.hideLoaderOverlay();
               return Text('Não foi possível carregar o cep.');
             }
 
@@ -77,6 +80,7 @@ class CepWidget extends StatelessWidget {
               );
             }
 
+            context.hideLoaderOverlay();
             return Text('');
           },
         )
