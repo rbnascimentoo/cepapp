@@ -39,7 +39,10 @@ class CepWidget extends StatelessWidget {
                       style: TextStyle(color: Colors.blueAccent),
                     ),
                   );
-                  var r = _cepBloc.getCEP(_cepMaskController.text.toString());
+                  if(_cepMaskController.text != null) {
+                    var r = _cepBloc.getCEP(_cepMaskController.text.toString());
+                  }
+
                 }),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
@@ -63,12 +66,12 @@ class CepWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     Text('Cep: ' + (snapshot?.data?.cep != null ? snapshot?.data?.cep : '')),
-                    Text('logradouro: ' + (snapshot?.data?.logradouro != null ? snapshot?.data?.bairro : '')),
-                    Text('complemento: ' + (snapshot?.data?.complemento != null ? snapshot?.data?.complemento : '')),
-                    Text('bairro: ' + (snapshot?.data?.bairro != null ? snapshot?.data?.bairro : '')),
-                    Text('localidade: ' + (snapshot?.data?.localidade != null ? snapshot?.data?.localidade : '')),
-                    Text('uf: ' + (snapshot?.data?.uf != null ? snapshot?.data?.uf : '')),
-                    Text('ddd: ' + (snapshot?.data?.ddd != null ? snapshot?.data?.ddd : '')),
+                    Text('Logradouro: ' + (snapshot?.data?.logradouro != null ? snapshot?.data?.bairro : '')),
+                    Text('Complemento: ' + (snapshot?.data?.complemento != null ? snapshot?.data?.complemento : '')),
+                    Text('Bairro: ' + (snapshot?.data?.bairro != null ? snapshot?.data?.bairro : '')),
+                    Text('Localidade: ' + (snapshot?.data?.localidade != null ? snapshot?.data?.localidade : '')),
+                    Text('UF: ' + (snapshot?.data?.uf != null ? snapshot?.data?.uf : '')),
+                    Text('DDD: ' + (snapshot?.data?.ddd != null ? snapshot?.data?.ddd : '')),
                   ],
                 ),
               );
